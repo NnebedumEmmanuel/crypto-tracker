@@ -28,7 +28,7 @@ function App() {
    <div className={classes.App}>
     <Header />
     <Routes>
-      <Route className="app" path="/" element={<Homepage/>} />
+      <Route  path="/" element={<Homepage/>} />
       <Route path="/CoinPage" element={<CoinPage/>} />
     </Routes>
    
