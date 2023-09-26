@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import "react-alice-carousel/lib/alice-carousel.css";
 import CryptoContext from "./CryptoContext";
-// import {BrowserRouter as Router} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>

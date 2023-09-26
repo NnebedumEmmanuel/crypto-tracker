@@ -1,16 +1,9 @@
 import { makeStyles } from "@material-ui/core";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-import './App.css';
-
-//components
-import Header from "./component/Header"
-
-
-//!SECTION Pages ROUTES
-import Homepage from "./pages/Homepage"
-import CoinPage from "./pages/CoinPage"
-
-
+import Homepage from "./Pages/HomePage";
+import "./App.css";
+import { BrowserRouter, Route } from "react-router-dom";
+import CoinPage from "./Pages/CoinPage";
+import Header from "./components/Header";
 
 const useStyles = makeStyles(() => ({
   App: {
@@ -22,19 +15,15 @@ const useStyles = makeStyles(() => ({
 
 function App() {
   const classes = useStyles();
-  
-  return (
-   <BrowserRouter>
-   <div className={classes.App}>
-    <Header />
-    <Routes>
-      <Route  path="/" element={<Homepage/>} />
-      <Route path="/CoinPage" element={<CoinPage/>} />
-    </Routes>
-   
-   </div>
 
-   </BrowserRouter>
+  return (
+    <BrowserRouter>
+      <div className={classes.App}>
+        <Header />
+        <Route path="/" component={Homepage} exact />
+        <Route path="/coins/:id" component={CoinPage} exact />
+      </div>
+    </BrowserRouter>
   );
 }
 
